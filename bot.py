@@ -32,7 +32,6 @@ def main():
     global building_count
     
     options = webdriver.ChromeOptions()
-    options.add_argument("--mute-audio")
     options.add_experimental_option("detach", True)
     driver = webdriver.Chrome(options=options)
     driver.get("http://localhost:8000")
@@ -44,7 +43,7 @@ def main():
     estimated_cps = 1.0
 
     while True:
-        for _ in range(20):
+        for _ in range(40):
             big_cookie.click()
         
         if time.time() - last_check < 0.5:
