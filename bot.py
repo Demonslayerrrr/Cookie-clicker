@@ -31,10 +31,9 @@ def get_price(name):
 def main():
     global building_count
     
-    options = webdriver.ChromeOptions()
-    options.add_experimental_option("detach", True)
-    driver = webdriver.Chrome(options=options)
-    driver.get("http://localhost:8000")
+    options = webdriver.FirefoxOptions()
+    driver = webdriver.Firefox(options=options)
+    driver.get("localhost:8000")
 
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "langSelect-EN"))).click()
     big_cookie = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "bigCookie")))
